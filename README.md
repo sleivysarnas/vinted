@@ -13,6 +13,7 @@ How to start it?
 1. Download ```vinted.jar``` from the Git repository
 2. Open command line window and navigate to the .jar file
 3. Type ```java -jar vinted.jar``` and the module should start
+4. Final transaction list with prices and discounts will appear in the ```outputTransactions.txt``` file.
 
 Please make it sure that you have both input files in the same directory as the .jar file:
 - User transactions should be listed in the ```input.txt``` file
@@ -20,7 +21,3 @@ Please make it sure that you have both input files in the same directory as the 
 
 Also, there is no check for data validity when loading providers from the file, so please make it sure that it satisfies this format:
 ```Name Size Price```, for example ```LP L 4.50```
-
-# Output
-----------------------------
-Final transaction list with prices and discounts will appear in the ```outputTransactions.txt``` file.
