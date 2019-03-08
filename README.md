@@ -19,5 +19,5 @@ Please make it sure that you have both input files in the same directory as the 
 - User transactions should be listed in the ```input.txt``` file
 - Provider list should be listed in the ```providers.txt``` file
 
-Keep in mind, there is no check for data validity when loading providers from the file, so it must satisfy this format:
+Keep in mind, there is no check for data validity when loading providers from the file, so it must satisfy this format:<br/>
 ```Name Size Price``` for example ```LP L 4.50```
