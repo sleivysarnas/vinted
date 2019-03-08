@@ -1,2 +1,1 @@
-"# vinted" 
-# vinted
+Vinted discount module
