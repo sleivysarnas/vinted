@@ -4,8 +4,6 @@ import module.ShippingInterface;
 import module.Transaction;
 import utilities.ModuleHelper;
 
-import java.util.List;
-
 public class FreeXShipmentRule implements DiscountRule {
 
     private static final String CARRIER = "LP";
@@ -16,12 +14,11 @@ public class FreeXShipmentRule implements DiscountRule {
 
     public FreeXShipmentRule(ModuleHelper moduleHelper) {
         this.moduleHelper = moduleHelper;
-        applyDiscounts(moduleHelper.getTransactions());
     }
 
-    public void applyDiscounts(List<Transaction> transactionList) {
+    public void applyDiscounts() {
         int shipmentCount = 0;
-        for (Transaction transaction : transactionList) {
+        for (Transaction transaction : moduleHelper.getTransactions()) {
             if (transaction.getName().equals(CARRIER) && transaction.getSize().equals(PACKAGE_SIZE)) {
                 shipmentCount++;
                 if (shipmentCount == AMOUNT_FOR_FREE_SHIPMENT) {

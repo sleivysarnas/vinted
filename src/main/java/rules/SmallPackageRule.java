@@ -14,14 +14,13 @@ public class SmallPackageRule implements DiscountRule {
 
     public SmallPackageRule(ModuleHelper moduleHelper) {
         this.moduleHelper = moduleHelper;
-        applyDiscounts(moduleHelper.getTransactions());
     }
 
-    public void applyDiscounts(List<Transaction> transactionList) {
+    public void applyDiscounts() {
         float lowestPrice = getLowestPrice(moduleHelper.getProviders());
         float providerPrice;
         String discount;
-        for (Transaction transaction : transactionList) {
+        for (Transaction transaction : moduleHelper.getTransactions()) {
             if (transaction.getSize().equals(ShippingInterface.PackageSize.valueOf(SMALL_PACKAGE_NAME))) {
                 providerPrice = Float.parseFloat
                         (moduleHelper.getProviderPrice(transaction.getName(), transaction.getSize()));

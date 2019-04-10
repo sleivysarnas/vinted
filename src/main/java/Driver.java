@@ -11,9 +11,9 @@ public class Driver {
             //Check those lists for data validity and restructurise to corresponding class Object lists
             ModuleHelper moduleHelper = new ModuleHelper(fileWorker.getInputTransactions(), fileWorker.getInputProviders());
             //Apply discount rules one by one and get final Transactions list (with applied discounts and final prices)
-            DiscountModule discountModule = new DiscountModule(moduleHelper);
+            new DiscountModule(moduleHelper);
             //Form an output file
-            fileWorker.writeFile(discountModule.getFinalTransactions(), moduleHelper.getIgnoredTransactions());
+            fileWorker.writeFile(moduleHelper.getTransactions(), moduleHelper.getIgnoredTransactions());
         } catch (Exception e) {
             System.err.println("Error!");
             e.printStackTrace();
